@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Rahul Organic Farm</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f3ea;
+    color:#183a24;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root{
+    --dark:#103b24;
+    --green:#2f7045;
+    --light:#c4df73;
+    --cream:#f5f3ea;
+    --white:#ffffff;
+    --text:#183a24;
+    --muted:#68756c;
+    --border:#dce4d8;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:78px;
+
+    padding:12px 5%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:9999;
+
+    background:rgba(8,35,20,.95);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:var(--light);
+}
+
+.motto{
+    color:#e1eadf;
+    font-size:12px;
+    margin-left:20px;
+    padding-left:20px;
+    border-left:1px solid rgba(255,255,255,.3);
+}
+
+.motto span{
+    color:var(--light);
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+    font-size:13px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--light);
+}
+
+.cart-link{
+    position:relative;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    padding:8px 15px;
+
+    border-radius:30px;
+}
+
+.cart-link:hover{
+    background:var(--light);
+    color:var(--dark) !important;
+}
+
+.cart-count{
+    position:absolute;
+
+    top:-9px;
+    right:-7px;
+
+    min-width:21px;
+    height:21px;
+
+    padding:0 5px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#d95b35;
+    color:white;
+
+    border-radius:50%;
+
+    font-size:10px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:620px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+
+    color:white;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.94),
+            rgba(3,27,14,.55),
+            rgba(3,27,14,.12)
+        ),
+        url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+    background-position:center;
+
+    animation:heroZoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:108%;
+    }
+
+}
+
+.hero-content{
+    padding:140px 8% 70px;
+
+    max-width:900px;
+}
+
+.hero-small{
+    color:var(--light);
+
+    font-size:12px;
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+
+    font-weight:normal;
+
+    font-size:clamp(55px,7vw,88px);
+
+    line-height:.98;
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--light);
+}
+
+.hero p{
+    max-width:680px;
+
+    color:#e1e9e3;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+.hero-motto{
+    margin-top:22px;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+.hero-motto span{
+    color:var(--light);
+}
+
+.buttons{
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:50px;
+
+    padding:0 24px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.btn-green{
+    background:var(--light);
+    color:var(--dark);
+}
+
+.btn-green:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.25);
+}
+
+.btn-outline{
+    color:white;
+
+    border:1px solid rgba(255,255,255,.6);
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--dark);
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.intro{
+    padding:110px 7%;
+
+    background:var(--cream);
+}
+
+.intro-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:75px;
+
+    align-items:center;
+}
+
+.section-label{
+    color:var(--green);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:13px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+
+    font-size:clamp(40px,5vw,62px);
+
+    line-height:1.05;
+
+    font-weight:normal;
+
+    color:var(--dark);
+
+    margin-bottom:22px;
+}
+
+.intro-text{
+    color:var(--muted);
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+.intro-image{
+    position:relative;
+}
+
+.intro-image img{
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+}
+
+.image-card{
+    position:absolute;
+
+    left:-30px;
+    bottom:30px;
+
+    background:white;
+
+    padding:25px 30px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 20px 50px rgba(16,59,36,.18);
+
+    max-width:260px;
+}
+
+.image-card strong{
+    display:block;
+
+    font-family:Georgia,serif;
+
+    font-size:28px;
+
+    color:var(--dark);
+}
+
+.image-card span{
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   STORY SECTION
+========================================================= */
+
+.story{
+    padding:105px 7%;
+
+    background:white;
+}
+
+.story-heading{
+    max-width:750px;
+
+    margin-bottom:60px;
+}
+
+.story-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.story-card{
+    padding:35px;
+
+    background:#f5f7f1;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    transition:.35s;
+}
+
+.story-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(16,59,36,.10);
+}
+
+.story-number{
+    font-family:Georgia,serif;
+
+    font-size:45px;
+
+    color:#9cb65d;
+
+    margin-bottom:15px;
+}
+
+.story-card h3{
+    font-family:Georgia,serif;
+
+    font-size:26px;
+
+    font-weight:normal;
+
+    color:var(--dark);
+
+    margin-bottom:12px;
+}
+
+.story-card p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MISSION / VISION
+========================================================= */
+
+.mission{
+    padding:100px 7%;
+
+    background:#e7eddf;
+}
+
+.mission-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+}
+
+.mission-card{
+    min-height:360px;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.mission-card::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(4,28,15,.94),
+            rgba(4,28,15,.15)
+        );
+}
+
+.mission-card > *{
+    position:relative;
+    z-index:1;
+}
+
+.mission-card h3{
+    font-family:Georgia,serif;
+
+    font-size:42px;
+
+    font-weight:normal;
+
+    margin-bottom:12px;
+}
+
+.mission-card p{
+    color:#dbe5dd;
+
+    max-width:530px;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.mission-one{
+    background-image:
+        url("https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1600&q=90");
+}
+
+.mission-two{
+    background-image:
+        url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=90");
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.values{
+    padding:110px 7%;
+
+    background:var(--cream);
+}
+
+.values-heading{
+    text-align:center;
+
+    max-width:750px;
+
+    margin:0 auto 60px;
+}
+
+.values-heading p{
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+.values-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.value{
+    background:white;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+}
+
+.value:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(16,59,36,.09);
+}
+
+.value-icon{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#e1ebd4;
+
+    font-size:29px;
+}
+
+.value h3{
+    font-family:Georgia,serif;
+
+    font-size:23px;
+
+    font-weight:normal;
+
+    color:var(--dark);
+
+    margin-bottom:10px;
+}
+
+.value p{
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats{
+    padding:85px 7%;
+
+    background:var(--dark);
+
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    text-align:center;
+}
+
+.stat{
+    padding:20px;
+
+    border-right:1px solid rgba(255,255,255,.13);
+}
+
+.stat:last-child{
+    border-right:none;
+}
+
+.stat-number{
+    font-family:Georgia,serif;
+
+    color:var(--light);
+
+    font-size:52px;
+
+    margin-bottom:5px;
+}
+
+.stat-title{
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+}
+
+.stat-text{
+    color:#aebeb3;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote-section{
+    padding:115px 7%;
+
+    text-align:center;
+
+    background:white;
+}
+
+.quote-mark{
+    color:#9cb65d;
+
+    font-family:Georgia,serif;
+
+    font-size:80px;
+
+    line-height:.5;
+
+    margin-bottom:35px;
+}
+
+.quote{
+    max-width:950px;
+
+    margin:auto;
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(30px,4vw,50px);
+
+    line-height:1.25;
+
+    font-weight:normal;
+
+    color:var(--dark);
+}
+
+.quote-author{
+    margin-top:25px;
+
+    color:var(--green);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    margin:100px 7%;
+
+    padding:75px;
+
+    border-radius:30px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.95),
+            rgba(3,27,14,.25)
+        ),
+        url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.cta h2{
+    max-width:750px;
+
+    font-family:Georgia,serif;
+
+    font-size:60px;
+
+    font-weight:normal;
+
+    line-height:1.05;
+
+    margin-bottom:18px;
+}
+
+.cta p{
+    max-width:620px;
+
+    color:#dce6df;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#0b2818;
+
+    color:white;
+
+    padding:65px 7% 25px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#b9c8bd;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.footer-links a{
+    display:block;
+
+    color:#b9c8bd;
+
+    font-size:13px;
+
+    margin-bottom:9px;
+}
+
+.footer-links a:hover{
+    color:var(--light);
+}
+
+.footer-motto{
+    margin-top:22px;
+
+    color:var(--light);
+
+    font-weight:bold;
+
+    font-size:18px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:35px;
+
+    padding-top:20px;
+
+    color:#899a8e;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .motto{
+        display:none;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+
+    .values-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .intro-grid,
+    .mission-grid{
+        grid-template-columns:1fr;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stat{
+        border-right:none;
+        border-bottom:1px solid rgba(255,255,255,.13);
+    }
+
+    .hero{
+        min-height:570px;
+    }
+
+    .intro-image img{
+        height:400px;
+    }
+
+    .image-card{
+        left:20px;
+    }
+
+    .cta{
+        margin:70px 5%;
+
+        padding:45px 30px;
+    }
+
+    .cta h2{
+        font-size:45px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-bottom:1px solid rgba(255,255,255,.13);
+    }
+
+    .mission-card{
+        min-height:320px;
+        padding:35px;
+    }
+
+    .mission-card h3{
+        font-size:35px;
+    }
+
+    .intro,
+    .story,
+    .values{
+        padding:75px 6%;
+    }
+
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+.image-fallback{
+    background:
+        linear-gradient(
+            135deg,
+            #315f3b,
+            #9cb65d
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-family:Georgia,serif;
+
+    font-size:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="index.html" class="logo">
+
+            Rahul <span>Organic Farm</span>
+
+        </a>
+
+        <div class="motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="farming.html">
+            Our Farming
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+
+        <a href="about.html" class="active">
+            About Us
+        </a>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+        <a href="cart.html" class="cart-link">
+
+            🛒 Cart
+
+            <span class="cart-count"
+                  id="cartCount">
+                0
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            About Rahul Organic Farm
+        </div>
+
+        <h1>
+
+            Rooted in
+            <span>nature.</span>
+
+        </h1>
+
+        <p>
+
+            Rahul Organic Farm is built around a simple
+            belief — when we care for the soil, the soil
+            gives us better food and a healthier future.
+
+        </p>
+
+        <div class="hero-motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="farming.html"
+               class="btn btn-green">
+
+                Discover Our Farming →
+
+            </a>
+
+            <a href="products.html"
+               class="btn btn-outline">
+
+                Explore Products
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTRODUCTION
+========================================================= -->
+
+<section class="intro">
+
+    <div class="intro-grid">
+
+
+        <div>
+
+            <div class="section-label">
+                Who We Are
+            </div>
+
+            <h2 class="section-title">
+
+                A farm with
+                a purpose.
+
+            </h2>
+
+            <p class="intro-text">
+
+                Rahul Organic Farm was created with a
+                vision to bring people closer to the
+                food they eat and the farmers who grow it.
+
+            </p>
+
+            <p class="intro-text">
+
+                We believe agriculture is not simply about
+                producing food. It is about protecting soil,
+                respecting nature, supporting farmers and
+                creating something valuable for the next
+                generation.
+
+            </p>
+
+            <p class="intro-text">
+
+                From vegetables and fruits to grains and
+                carefully selected farm products, every
+                part of our journey begins with the land.
+
+            </p>
+
+            <div class="buttons">
+
+                <a href="farming.html"
+                   class="btn btn-green">
+
+                    How We Farm →
+
+                </a>
+
+                <a href="contact.html"
+                   class="btn"
+                   style="
+                   background:var(--dark);
+                   color:white;">
+
+                    Talk To Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="intro-image">
+
+            <img
+                src="rahul-farm-team.png"
+                alt="Rahul Organic Farm Team"
+            >
+
+            <div class="image-card">
+
+                <strong>
+                    Farm to Table
+                </strong>
+
+                <span>
+                    Growing with care. Sharing with purpose.
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OUR STORY
+========================================================= -->
+
+<section class="story">
+
+    <div class="story-heading">
+
+        <div class="section-label">
+            Our Journey
+        </div>
+
+        <h2 class="section-title">
+            From the soil,
+            with care.
+        </h2>
+
+        <p class="intro-text">
+
+            Our journey is guided by three simple ideas:
+            respect the land, grow responsibly and provide
+            people with food they can feel good about.
+
+        </p>
+
+    </div>
+
+
+    <div class="story-grid">
+
+
+        <div class="story-card">
+
+            <div class="story-number">
+                01
+            </div>
+
+            <h3>
+                Respect the Soil
+            </h3>
+
+            <p>
+
+                Healthy agriculture begins beneath our
+                feet. We focus on maintaining soil health
+                and treating the land as something to
+                protect rather than simply use.
+
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <div class="story-number">
+                02
+            </div>
+
+            <h3>
+                Grow with Care
+            </h3>
+
+            <p>
+
+                Every crop has its own needs. We pay
+                attention to cultivation, seasonal
+                conditions and harvesting so that our
+                produce can reach its best quality.
+
+            </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <div class="story-number">
+                03
+            </div>
+
+            <h3>
+                Share the Harvest
+            </h3>
+
+            <p>
+
+                Our goal is to connect the farm and the
+                family table — making fresh agricultural
+                products more accessible to the people
+                around us.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MISSION & VISION
+========================================================= -->
+
+<section class="mission">
+
+    <div class="mission-grid">
+
+
+        <div class="mission-card mission-one">
+
+            <div class="section-label"
+                 style="color:#c4df73;">
+                Our Mission
+            </div>
+
+            <h3>
+                Grow responsibly.
+            </h3>
+
+            <p>
+
+                To cultivate fresh agricultural products
+                while caring for the soil, respecting
+                natural resources and maintaining a strong
+                connection between farmers and consumers.
+
+            </p>
+
+        </div>
+
+
+        <div class="mission-card mission-two">
+
+            <div class="section-label"
+                 style="color:#c4df73;">
+                Our Vision
+            </div>
+
+            <h3>
+                A healthier tomorrow.
+            </h3>
+
+            <p>
+
+                We envision a future where farming,
+                nature and communities grow together —
+                creating healthier food and a healthier
+                environment for generations to come.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OUR VALUES
+========================================================= -->
+
+<section class="values">
+
+    <div class="values-heading">
+
+        <div class="section-label">
+            What We Believe
+        </div>
+
+        <h2 class="section-title">
+            Our values guide
+            every harvest.
+        </h2>
+
+        <p>
+
+            Farming is a responsibility. These principles
+            influence how we look at our land, our crops
+            and the people we serve.
+
+        </p>
+
+    </div>
+
+
+    <div class="values-grid">
+
+
+        <div class="value">
+
+            <div class="value-icon">
+                🌱
+            </div>
+
+            <h3>
+                Soil First
+            </h3>
+
+            <p>
+
+                Healthy soil is the foundation of healthy
+                agriculture.
+
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-icon">
+                💧
+            </div>
+
+            <h3>
+                Use Responsibly
+            </h3>
+
+            <p>
+
+                We believe natural resources should be
+                respected and used thoughtfully.
+
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-icon">
+                🧑‍🌾
+            </div>
+
+            <h3>
+                Farmer Pride
+            </h3>
+
+            <p>
+
+                Farming deserves respect because every
+                meal begins with a farmer.
+
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-icon">
+                ❤️
+            </div>
+
+            <h3>
+                Quality
+            </h3>
+
+            <p>
+
+                We care about the freshness and quality
+                of what reaches your table.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                100%
+            </div>
+
+            <div class="stat-title">
+                Farm Focused
+            </div>
+
+            <div class="stat-text">
+                From soil to harvest
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                24/7
+            </div>
+
+            <div class="stat-title">
+                Care
+            </div>
+
+            <div class="stat-text">
+                Farming never really stops
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                1
+            </div>
+
+            <div class="stat-title">
+                Purpose
+            </div>
+
+            <div class="stat-text">
+                Better food and better farming
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                ∞
+            </div>
+
+            <div class="stat-title">
+                Tomorrow
+            </div>
+
+            <div class="stat-text">
+                Farming for future generations
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FARM QUOTE
+========================================================= -->
+
+<section class="quote-section">
+
+    <div class="quote-mark">
+        “
+    </div>
+
+    <div class="quote">
+
+        The farmer takes care of the soil today
+        so that tomorrow's generation can eat
+        from it.
+
+    </div>
+
+    <div class="quote-author">
+
+        Rahul Organic Farm
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+    <div>
+
+        <div class="section-label"
+             style="color:#c4df73;">
+
+            Rahul Organic Farm
+
+        </div>
+
+        <h2>
+
+            Come closer to
+            the farm.
+
+        </h2>
+
+        <p>
+
+            Explore how we grow, see our farm through
+            the gallery and discover the fresh products
+            available from Rahul Organic Farm.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a href="farming.html"
+               class="btn btn-green">
+
+                Our Farming →
+
+            </a>
+
+            <a href="gallery.html"
+               class="btn btn-outline">
+
+                View Gallery →
+
+            </a>
+
+            <a href="products.html"
+               class="btn btn-outline">
+
+                Shop Products →
+
+            </a>
+
+            <a href="contact.html"
+               class="btn btn-outline">
+
+                Contact Us →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                Rahul Organic Farm
+            </h3>
+
+            <p>
+
+                Fresh from our soil to your table.
+                Responsible farming, fresh produce
+                and a healthier tomorrow.
+
+            </p>
+
+            <div class="footer-motto">
+
+                <span>జై జవాన్</span>
+
+                &nbsp;•&nbsp;
+
+                <span>జై కిసాన్</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="farming.html">
+                Our Farming
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Andhra Pradesh, India
+            </p>
+
+            <p>
+                +91 98765 43210
+            </p>
+
+            <p>
+                hello@rahulorganicfarm.in
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Rahul Organic Farm.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   CART COUNT
+========================================================= */
+
+let cart =
+JSON.parse(
+    localStorage.getItem("rahulOrganicCart")
+) || [];
+
+
+function updateCartCount(){
+
+    let totalQuantity = 0;
+
+    cart.forEach(function(item){
+
+        totalQuantity +=
+        Number(item.quantity) || 0;
+
+    });
+
+    const cartCount =
+    document.getElementById("cartCount");
+
+    if(cartCount){
+
+        cartCount.textContent =
+        totalQuantity;
+
+    }
+
+}
+
+
+updateCartCount();
+
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+document.querySelectorAll("img")
+.forEach(function(image){
+
+    image.addEventListener(
+        "error",
+        function(){
+
+            this.style.display = "none";
+
+            const parent =
+            this.parentElement;
+
+            parent.classList.add(
+                "image-fallback"
+            );
+
+            parent.innerHTML =
+            "<span>Rahul Organic Farm</span>";
+
+        }
+    );
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

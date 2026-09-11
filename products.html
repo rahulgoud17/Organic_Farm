@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Products | Rahul Organic Farm</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f3ea;
+    color:#183a24;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root{
+    --dark:#103b24;
+    --green:#2f7045;
+    --light:#c4df73;
+    --cream:#f5f3ea;
+    --white:#ffffff;
+    --text:#183a24;
+    --muted:#68756c;
+    --border:#dce4d8;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:78px;
+
+    padding:12px 5%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    z-index:9999;
+
+    background:rgba(8,35,20,.95);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:var(--light);
+}
+
+.motto{
+    color:#e1eadf;
+    font-size:12px;
+    margin-left:20px;
+    padding-left:20px;
+    border-left:1px solid rgba(255,255,255,.3);
+}
+
+.motto span{
+    color:var(--light);
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+    font-size:13px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--light);
+}
+
+.cart-link{
+    position:relative;
+    border:1px solid rgba(255,255,255,.3);
+    padding:8px 15px;
+    border-radius:30px;
+}
+
+.cart-link:hover{
+    background:var(--light);
+    color:var(--dark) !important;
+}
+
+.cart-count{
+    position:absolute;
+    top:-9px;
+    right:-7px;
+
+    min-width:21px;
+    height:21px;
+
+    padding:0 5px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#d95b35;
+    color:white;
+
+    border-radius:50%;
+
+    font-size:10px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:610px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+
+    color:white;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.94),
+            rgba(3,27,14,.52),
+            rgba(3,27,14,.15)
+        ),
+        url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+    background-position:center;
+
+    animation:heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:108%;
+    }
+
+}
+
+.hero-content{
+    padding:140px 8% 70px;
+    max-width:850px;
+}
+
+.hero-small{
+    color:var(--light);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-weight:normal;
+    font-size:clamp(55px,7vw,88px);
+    line-height:.98;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--light);
+}
+
+.hero p{
+    max-width:650px;
+    color:#e1e9e3;
+    font-size:17px;
+    line-height:1.8;
+}
+
+.hero-motto{
+    margin-top:22px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.hero-motto span{
+    color:var(--light);
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:50px;
+    padding:0 24px;
+
+    border-radius:50px;
+
+    font-size:13px;
+    font-weight:bold;
+
+    transition:.3s;
+    cursor:pointer;
+    border:none;
+}
+
+.btn-green{
+    background:var(--light);
+    color:var(--dark);
+}
+
+.btn-green:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.btn-outline{
+    color:white;
+    border:1px solid rgba(255,255,255,.6);
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--dark);
+}
+
+
+/* =========================================================
+   PRODUCTS SECTION
+========================================================= */
+
+.products-section{
+    padding:100px 7%;
+}
+
+.section-heading{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:40px;
+    margin-bottom:50px;
+}
+
+.label{
+    color:var(--green);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.title{
+    font-family:Georgia,serif;
+    font-weight:normal;
+
+    font-size:clamp(40px,5vw,60px);
+    line-height:1.05;
+
+    color:var(--dark);
+    margin-bottom:15px;
+}
+
+.description{
+    max-width:600px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filters{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.filter-btn{
+    border:none;
+
+    padding:11px 20px;
+
+    border-radius:30px;
+
+    background:#e1e7dc;
+    color:var(--dark);
+
+    font-size:12px;
+    font-weight:bold;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:var(--dark);
+    color:white;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.product-card{
+    position:relative;
+    overflow:hidden;
+
+    background:white;
+
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    box-shadow:
+        0 10px 35px rgba(16,59,36,.06);
+
+    transition:.4s;
+}
+
+.product-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(16,59,36,.13);
+}
+
+.product-image{
+    height:250px;
+    position:relative;
+    overflow:hidden;
+    background:#e2e8de;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.08);
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    background:var(--light);
+    color:var(--dark);
+
+    font-size:9px;
+    font-weight:bold;
+
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.product-info{
+    padding:23px;
+}
+
+.product-category{
+    color:var(--green);
+    font-size:9px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.product-name{
+    font-family:Georgia,serif;
+    font-size:27px;
+    font-weight:normal;
+    color:var(--dark);
+    margin-bottom:7px;
+}
+
+.product-description{
+    color:var(--muted);
+    font-size:12px;
+    min-height:42px;
+    line-height:1.6;
+    margin-bottom:17px;
+}
+
+.product-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.price{
+    color:var(--dark);
+    font-size:20px;
+    font-weight:800;
+}
+
+.price small{
+    color:var(--muted);
+    font-size:10px;
+    font-weight:normal;
+}
+
+.add-cart{
+    border:none;
+
+    background:var(--dark);
+    color:white;
+
+    padding:11px 16px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:11px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.add-cart:hover{
+    background:var(--green);
+    transform:translateY(-2px);
+}
+
+.add-cart.added{
+    background:#6d8d43;
+}
+
+
+/* =========================================================
+   CART SUMMARY
+========================================================= */
+
+.cart-summary{
+    margin-top:55px;
+
+    padding:28px 32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    border-radius:20px;
+
+    background:#e7eddf;
+
+    border:1px solid #d6dfcf;
+}
+
+.cart-summary-left h3{
+    color:var(--dark);
+    font-family:Georgia,serif;
+    font-size:27px;
+    font-weight:normal;
+}
+
+.cart-summary-left p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.cart-summary-right{
+    text-align:right;
+}
+
+.cart-total-label{
+    color:var(--muted);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.cart-total{
+    color:var(--dark);
+    font-size:28px;
+    font-weight:800;
+    margin:3px 0 12px;
+}
+
+
+/* =========================================================
+   WHY BUY
+========================================================= */
+
+.why-section{
+    padding:100px 7%;
+    background:#e7eddf;
+}
+
+.why-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.why-heading .description{
+    margin:auto;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.why-card{
+    background:white;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    border:1px solid #dce4d8;
+
+    transition:.3s;
+}
+
+.why-card:hover{
+    transform:translateY(-5px);
+}
+
+.why-icon{
+    width:58px;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#e1ebd4;
+
+    font-size:26px;
+
+    margin-bottom:20px;
+}
+
+.why-card h3{
+    color:var(--dark);
+    font-family:Georgia,serif;
+    font-size:25px;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+
+.why-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    margin:100px 7%;
+
+    padding:75px;
+
+    border-radius:30px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.94),
+            rgba(3,27,14,.25)
+        ),
+        url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.cta h2{
+    max-width:700px;
+
+    font-family:Georgia,serif;
+
+    font-size:60px;
+    font-weight:normal;
+
+    line-height:1.05;
+
+    margin-bottom:18px;
+}
+
+.cta p{
+    max-width:600px;
+
+    color:#dce6df;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#0b2818;
+    color:white;
+
+    padding:65px 7% 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#b9c8bd;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.footer-links a{
+    display:block;
+
+    color:#b9c8bd;
+
+    font-size:13px;
+
+    margin-bottom:9px;
+}
+
+.footer-links a:hover{
+    color:var(--light);
+}
+
+.footer-motto{
+    margin-top:22px;
+    color:var(--light);
+    font-weight:bold;
+    font-size:18px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:35px;
+    padding-top:20px;
+
+    color:#899a8e;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    z-index:12000;
+
+    background:var(--dark);
+    color:white;
+
+    padding:15px 22px;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
+
+    font-size:13px;
+
+    transform:translateY(120px);
+    opacity:0;
+
+    transition:.4s;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .motto{
+        display:none;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .navbar{
+        padding:14px 5%;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:550px;
+    }
+
+    .hero-content{
+        padding:130px 7% 60px;
+    }
+
+    .section-heading{
+        display:block;
+    }
+
+    .section-heading .description{
+        margin-top:20px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cart-summary{
+        display:block;
+        text-align:center;
+    }
+
+    .cart-summary-right{
+        text-align:center;
+        margin-top:20px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        margin:70px 5%;
+        padding:45px 30px;
+    }
+
+    .cta h2{
+        font-size:45px;
+    }
+
+    .products-section,
+    .why-section{
+        padding:75px 6%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="index.html" class="logo">
+            Rahul <span>Organic Farm</span>
+        </a>
+
+        <div class="motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="farming.html">
+            Our Farming
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="products.html" class="active">
+            Products
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+        <a href="cart.html" class="cart-link">
+
+            🛒 Cart
+
+            <span class="cart-count"
+                  id="cartCount">
+                0
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Rahul Organic Farm
+        </div>
+
+        <h1>
+            Fresh from
+            <span>our soil.</span>
+        </h1>
+
+        <p>
+            Naturally grown produce, carefully harvested
+            and brought from our farm to your table.
+        </p>
+
+        <div class="hero-motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="#products"
+               class="btn btn-green">
+
+                Shop Fresh Produce ↓
+
+            </a>
+
+            <a href="cart.html"
+               class="btn btn-outline">
+
+                View Cart →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRODUCTS
+========================================================= -->
+
+<section class="products-section"
+         id="products">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <div class="label">
+                Farm Fresh Collection
+            </div>
+
+            <h2 class="title">
+                Products from
+                our farm.
+            </h2>
+
+        </div>
+
+        <p class="description">
+
+            Choose from our selection of naturally grown
+            fruits, vegetables, grains and farm products.
+            Add your favorites to the cart and continue
+            shopping.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="filters">
+
+        <button class="filter-btn active"
+                data-filter="all">
+
+            All Products
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="vegetables">
+
+            Vegetables
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="fruits">
+
+            Fruits
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="grains">
+
+            Grains
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="special">
+
+            Farm Specials
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PRODUCT GRID
+    ====================================================== -->
+
+    <div class="product-grid">
+
+
+
+        <!-- =================================================
+             TOMATOES
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="vegetables">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh red organic tomatoes growing on the farm"
+                >
+
+                <span class="badge">
+                    Fresh
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Vegetables
+                </div>
+
+                <h3 class="product-name">
+                    Tomatoes
+                </h3>
+
+                <p class="product-description">
+                    Fresh farm-grown tomatoes,
+                    naturally cultivated.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹60 <small>/ kg</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="tomatoes"
+                            data-name="Tomatoes"
+                            data-price="60"
+                            data-unit="kg">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             CARROTS
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="vegetables">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh carrots harvested from an organic farm"
+                >
+
+                <span class="badge">
+                    Organic
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Vegetables
+                </div>
+
+                <h3 class="product-name">
+                    Carrots
+                </h3>
+
+                <p class="product-description">
+                    Crisp, naturally grown carrots
+                    from our fields.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹80 <small>/ kg</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="carrots"
+                            data-name="Carrots"
+                            data-price="80"
+                            data-unit="kg">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             POTATOES
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="vegetables">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh potatoes"
+                >
+
+                <span class="badge">
+                    Farm Fresh
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Vegetables
+                </div>
+
+                <h3 class="product-name">
+                    Potatoes
+                </h3>
+
+                <p class="product-description">
+                    Freshly harvested potatoes
+                    from healthy soil.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹45 <small>/ kg</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="potatoes"
+                            data-name="Potatoes"
+                            data-price="45"
+                            data-unit="kg">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SPINACH
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="vegetables">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh green spinach leaves"
+                >
+
+                <span class="badge">
+                    Fresh
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Vegetables
+                </div>
+
+                <h3 class="product-name">
+                    Spinach
+                </h3>
+
+                <p class="product-description">
+                    Tender leafy greens harvested
+                    fresh from our farm.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹35 <small>/ bunch</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="spinach"
+                            data-name="Spinach"
+                            data-price="35"
+                            data-unit="bunch">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             STRAWBERRIES
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="fruits">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh strawberries"
+                >
+
+                <span class="badge">
+                    Seasonal
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Fruits
+                </div>
+
+                <h3 class="product-name">
+                    Strawberries
+                </h3>
+
+                <p class="product-description">
+                    Sweet seasonal fruit carefully
+                    grown and selected.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹180 <small>/ box</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="strawberries"
+                            data-name="Strawberries"
+                            data-price="180"
+                            data-unit="box">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             MANGOES
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="fruits">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh ripe mangoes"
+                >
+
+                <span class="badge">
+                    Seasonal
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Fruits
+                </div>
+
+                <h3 class="product-name">
+                    Mangoes
+                </h3>
+
+                <p class="product-description">
+                    Naturally ripened mangoes with
+                    rich farm-fresh flavor.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹120 <small>/ kg</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="mangoes"
+                            data-name="Mangoes"
+                            data-price="120"
+                            data-unit="kg">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             BANANAS
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="fruits">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh bananas"
+                >
+
+                <span class="badge">
+                    Fresh
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Fruits
+                </div>
+
+                <h3 class="product-name">
+                    Bananas
+                </h3>
+
+                <p class="product-description">
+                    Fresh, naturally grown bananas
+                    harvested at the right time.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹55 <small>/ dozen</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="bananas"
+                            data-name="Bananas"
+                            data-price="55"
+                            data-unit="dozen">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             ORANGES
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="fruits">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh oranges from an orange orchard"
+                >
+
+                <span class="badge">
+                    Fresh
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Fruits
+                </div>
+
+                <h3 class="product-name">
+                    Oranges
+                </h3>
+
+                <p class="product-description">
+                    Juicy citrus fruits selected
+                    directly from our harvest.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹90 <small>/ kg</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="oranges"
+                            data-name="Oranges"
+                            data-price="90"
+                            data-unit="kg">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             ORGANIC RICE
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="grains">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=90"
+                    alt="Organic rice"
+                >
+
+                <span class="badge">
+                    Organic
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Grains
+                </div>
+
+                <h3 class="product-name">
+                    Organic Rice
+                </h3>
+
+                <p class="product-description">
+                    Carefully cultivated rice
+                    from our farm fields.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹95 <small>/ kg</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="organic-rice"
+                            data-name="Organic Rice"
+                            data-price="95"
+                            data-unit="kg">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             WHEAT
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="grains">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1000&q=90"
+                    alt="Organic wheat"
+                >
+
+                <span class="badge">
+                    Natural
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Grains
+                </div>
+
+                <h3 class="product-name">
+                    Wheat
+                </h3>
+
+                <p class="product-description">
+                    Quality wheat grown with
+                    responsible farming methods.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹75 <small>/ kg</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="wheat"
+                            data-name="Wheat"
+                            data-price="75"
+                            data-unit="kg">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             FARM HONEY
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="special">
+
+
+<div class="product-image">
+
+    <img
+        src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=1000&q=90"
+        alt="Natural honey in glass jar"
+    >
+
+    <span class="badge">
+        Special
+    </span>
+
+</div>
+            <div class="product-info">
+
+                <div class="product-category">
+                    Farm Specials
+                </div>
+
+                <h3 class="product-name">
+                    Farm Honey
+                </h3>
+
+                <p class="product-description">
+                    Naturally collected honey with
+                    a rich and smooth taste.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹350 <small>/ jar</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="farm-honey"
+                            data-name="Farm Honey"
+                            data-price="350"
+                            data-unit="jar">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             FARM EGGS
+        ================================================== -->
+
+        <article class="product-card"
+                 data-category="special">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=1000&q=90"
+                    alt="Fresh farm eggs in a basket"
+                >
+
+                <span class="badge">
+                    Farm Fresh
+                </span>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Farm Specials
+                </div>
+
+                <h3 class="product-name">
+                    Farm Eggs
+                </h3>
+
+                <p class="product-description">
+                    Fresh eggs sourced directly
+                    from our farm.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ₹120 <small>/ dozen</small>
+                    </div>
+
+                    <button class="add-cart"
+                            data-id="farm-eggs"
+                            data-name="Farm Eggs"
+                            data-price="120"
+                            data-unit="dozen">
+
+                        🛒 Add
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CART SUMMARY
+    ====================================================== -->
+
+    <div class="cart-summary">
+
+        <div class="cart-summary-left">
+
+            <h3>
+                Your Farm Basket
+            </h3>
+
+            <p id="summaryText">
+                Your cart is currently empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-summary-right">
+
+            <div class="cart-total-label">
+                Cart Total
+            </div>
+
+            <div class="cart-total"
+                 id="cartTotal">
+
+                ₹0
+
+            </div>
+
+            <a href="cart.html"
+               class="btn btn-green">
+
+                Go To Cart →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHY BUY FROM US
+========================================================= -->
+
+<section class="why-section">
+
+    <div class="why-heading">
+
+        <div class="label">
+            Why Rahul Organic Farm
+        </div>
+
+        <h2 class="title">
+            From our farm
+            to your home.
+        </h2>
+
+        <p class="description">
+
+            We believe good food begins with healthy soil,
+            responsible farming and careful harvesting.
+
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                🌱
+            </div>
+
+            <h3>
+                Naturally Grown
+            </h3>
+
+            <p>
+                Our farming approach focuses on
+                healthy soil, natural practices and
+                responsible cultivation.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                🧺
+            </div>
+
+            <h3>
+                Farm Fresh
+            </h3>
+
+            <p>
+                Our produce is selected with freshness
+                and quality in mind before reaching
+                your basket.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                🚜
+            </div>
+
+            <h3>
+                Responsible Farming
+            </h3>
+
+            <p>
+                We respect the land and work toward
+                farming practices that support a
+                healthier future.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+    <div>
+
+        <div class="label"
+             style="color:#c4df73;">
+
+            Rahul Organic Farm
+
+        </div>
+
+        <h2>
+            Good food begins
+            with good soil.
+        </h2>
+
+        <p>
+            Explore our farm, discover how we grow
+            our produce and become part of the journey.
+        </p>
+
+        <div class="buttons">
+
+            <a href="farming.html"
+               class="btn btn-green">
+
+                Our Farming →
+
+            </a>
+
+            <a href="gallery.html"
+               class="btn btn-outline">
+
+                View Gallery →
+
+            </a>
+
+            <a href="contact.html"
+               class="btn btn-outline">
+
+                Contact Us →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                Rahul Organic Farm
+            </h3>
+
+            <p>
+                Fresh from our soil to your table.
+                Responsible farming, fresh produce
+                and a healthier tomorrow.
+            </p>
+
+            <div class="footer-motto">
+
+                <span>జై జవాన్</span>
+
+                &nbsp;•&nbsp;
+
+                <span>జై కిసాన్</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="farming.html">
+                Our Farming
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Andhra Pradesh, India
+            </p>
+
+            <p>
+                +91 98765 43210
+            </p>
+
+            <p>
+                hello@rahulorganicfarm.in
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Rahul Organic Farm.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div class="toast"
+     id="toast">
+
+    Product added to your cart ✓
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+const fallbackImage =
+"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=90";
+
+
+document.querySelectorAll("img").forEach(function(image){
+
+    image.onerror = function(){
+
+        this.onerror = null;
+
+        this.src = fallbackImage;
+
+    };
+
+});
+
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart =
+JSON.parse(
+    localStorage.getItem("rahulOrganicCart")
+) || [];
+
+
+
+function updateCartCount(){
+
+    let totalQuantity = 0;
+
+    cart.forEach(function(item){
+
+        totalQuantity += item.quantity;
+
+    });
+
+    document.getElementById("cartCount").textContent =
+    totalQuantity;
+
+    updateCartSummary();
+
+}
+
+
+
+function updateCartSummary(){
+
+    let total = 0;
+
+    let quantity = 0;
+
+    cart.forEach(function(item){
+
+        total +=
+        item.price * item.quantity;
+
+        quantity += item.quantity;
+
+    });
+
+
+    document.getElementById("cartTotal").textContent =
+    "₹" + total.toLocaleString("en-IN");
+
+
+    const summary =
+    document.getElementById("summaryText");
+
+
+    if(quantity === 0){
+
+        summary.textContent =
+        "Your cart is currently empty.";
+
+    }
+    else{
+
+        summary.textContent =
+        quantity +
+        (quantity === 1
+            ? " item"
+            : " items") +
+        " added to your farm basket.";
+
+    }
+
+}
+
+
+
+function saveCart(){
+
+    localStorage.setItem(
+        "rahulOrganicCart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCount();
+
+}
+
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+document.querySelectorAll(".add-cart")
+.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            const id =
+            this.dataset.id;
+
+            const name =
+            this.dataset.name;
+
+            const price =
+            Number(this.dataset.price);
+
+            const unit =
+            this.dataset.unit;
+
+
+            const existing =
+            cart.find(
+                item => item.id === id
+            );
+
+
+            if(existing){
+
+                existing.quantity++;
+
+            }
+            else{
+
+                cart.push({
+
+                    id:id,
+
+                    name:name,
+
+                    price:price,
+
+                    unit:unit,
+
+                    quantity:1
+
+                });
+
+            }
+
+
+            saveCart();
+
+
+            const originalText =
+            this.innerHTML;
+
+
+            this.innerHTML =
+            "✓ Added";
+
+
+            this.classList.add("added");
+
+
+            showToast(
+                name + " added to cart"
+            );
+
+
+            setTimeout(function(){
+
+                button.innerHTML =
+                originalText;
+
+                button.classList.remove(
+                    "added"
+                );
+
+            },1200);
+
+        }
+    );
+
+});
+
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+
+const productCards =
+document.querySelectorAll(".product-card");
+
+
+filterButtons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            filterButtons.forEach(
+                function(btn){
+
+                    btn.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            this.classList.add("active");
+
+
+            const filter =
+            this.dataset.filter;
+
+
+            productCards.forEach(
+                function(card){
+
+                    const category =
+                    card.dataset.category;
+
+
+                    if(
+                        filter === "all" ||
+                        category === filter
+                    ){
+
+                        card.style.display =
+                        "block";
+
+                    }
+                    else{
+
+                        card.style.display =
+                        "none";
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+});
+
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message){
+
+    const toast =
+    document.getElementById("toast");
+
+
+    toast.textContent =
+    message + " ✓";
+
+
+    toast.classList.add("show");
+
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },2000);
+
+}
+
+
+
+/* =========================================================
+   START
+========================================================= */
+
+updateCartCount();
+
+
+</script>
+
+
+</body>
+
+</html>

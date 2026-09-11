@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Rahul Organic Farm</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f3ea;
+    color:#183a24;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root{
+    --dark:#103b24;
+    --green:#2f7045;
+    --light:#c4df73;
+    --cream:#f5f3ea;
+    --white:#ffffff;
+    --text:#183a24;
+    --muted:#68756c;
+    --border:#dce4d8;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    min-height:78px;
+
+    padding:12px 5%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    z-index:9999;
+
+    background:rgba(8,35,20,.95);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+
+    font-size:22px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+.logo span{
+    color:var(--light);
+}
+
+.motto{
+    color:#e1eadf;
+
+    font-size:12px;
+
+    margin-left:20px;
+
+    padding-left:20px;
+
+    border-left:1px solid rgba(255,255,255,.3);
+}
+
+.motto span{
+    color:var(--light);
+
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--light);
+}
+
+.cart-link{
+    position:relative;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    padding:8px 15px;
+
+    border-radius:30px;
+}
+
+.cart-link:hover{
+    background:var(--light);
+
+    color:var(--dark) !important;
+}
+
+.cart-count{
+    position:absolute;
+
+    top:-9px;
+    right:-7px;
+
+    min-width:21px;
+
+    height:21px;
+
+    padding:0 5px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#d95b35;
+
+    color:white;
+
+    border-radius:50%;
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:530px;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.94),
+            rgba(3,27,14,.55),
+            rgba(3,27,14,.12)
+        ),
+
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+    animation:heroZoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:108%;
+    }
+
+}
+
+.hero-content{
+    padding:140px 8% 70px;
+
+    max-width:900px;
+}
+
+.hero-small{
+    color:var(--light);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+
+    font-weight:normal;
+
+    font-size:clamp(55px,7vw,82px);
+
+    line-height:.98;
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--light);
+}
+
+.hero p{
+    max-width:650px;
+
+    color:#e1e9e3;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+.hero-motto{
+    margin-top:20px;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+.hero-motto span{
+    color:var(--light);
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section{
+    padding:105px 7%;
+
+    background:var(--cream);
+}
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap:70px;
+
+    align-items:start;
+}
+
+
+/* =========================================================
+   SECTION TEXT
+========================================================= */
+
+.section-label{
+    color:var(--green);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:13px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+
+    font-size:clamp(40px,5vw,60px);
+
+    line-height:1.05;
+
+    font-weight:normal;
+
+    color:var(--dark);
+
+    margin-bottom:20px;
+}
+
+.description{
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-info{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.contact-item{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:20px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.contact-item:hover{
+    transform:translateX(5px);
+
+    box-shadow:
+        0 12px 30px rgba(16,59,36,.08);
+}
+
+.contact-icon{
+    min-width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#e2ecd6;
+
+    font-size:21px;
+}
+
+.contact-item h3{
+    font-family:Georgia,serif;
+
+    color:var(--dark);
+
+    font-size:19px;
+
+    font-weight:normal;
+
+    margin-bottom:3px;
+}
+
+.contact-item p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+.contact-item a{
+    color:var(--green);
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+.form-box{
+    background:white;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 20px 50px rgba(16,59,36,.08);
+}
+
+.form-box h2{
+    font-family:Georgia,serif;
+
+    color:var(--dark);
+
+    font-size:36px;
+
+    font-weight:normal;
+
+    margin-bottom:8px;
+}
+
+.form-box > p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:30px;
+}
+
+.form-row{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+
+    color:var(--dark);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+
+    width:100%;
+
+    border:1px solid #d6dfd3;
+
+    background:#f8faf6;
+
+    padding:14px 15px;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    font-size:13px;
+
+    color:var(--dark);
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+
+    border-color:var(--green);
+
+    background:white;
+
+    box-shadow:
+        0 0 0 3px rgba(47,112,69,.08);
+}
+
+.form-group textarea{
+    min-height:140px;
+
+    resize:vertical;
+}
+
+.submit-btn{
+
+    width:100%;
+
+    min-height:52px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--dark);
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.submit-btn:hover{
+
+    background:var(--green);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(16,59,36,.2);
+}
+
+.form-message{
+    display:none;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#e5f1dc;
+
+    color:var(--dark);
+
+    font-size:12px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   MAP / LOCATION
+========================================================= */
+
+.location{
+    padding:0 7% 100px;
+
+    background:var(--cream);
+}
+
+.location-box{
+    min-height:420px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+
+        linear-gradient(
+            rgba(4,28,15,.2),
+            rgba(4,28,15,.2)
+        ),
+
+        url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2000&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:40px;
+}
+
+.location-card{
+    background:white;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    max-width:440px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.2);
+}
+
+.location-card .section-label{
+    margin-bottom:8px;
+}
+
+.location-card h2{
+    font-family:Georgia,serif;
+
+    font-size:30px;
+
+    font-weight:normal;
+
+    color:var(--dark);
+
+    margin-bottom:8px;
+}
+
+.location-card p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+}
+
+.map-button{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:44px;
+
+    padding:0 20px;
+
+    background:var(--dark);
+
+    color:white;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.map-button:hover{
+    background:var(--green);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   BUSINESS HOURS
+========================================================= */
+
+.hours{
+    padding:100px 7%;
+
+    background:white;
+}
+
+.hours-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.hours-image{
+    min-height:440px;
+
+    border-radius:25px;
+
+    background:
+
+        linear-gradient(
+            0deg,
+            rgba(3,27,14,.3),
+            rgba(3,27,14,.05)
+        ),
+
+        url("https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1600&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.hours-list{
+    margin-top:25px;
+
+    border-top:1px solid var(--border);
+}
+
+.hour-row{
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+.hour-row strong{
+    color:var(--dark);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    margin:100px 7%;
+
+    padding:75px;
+
+    border-radius:30px;
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.95),
+            rgba(3,27,14,.25)
+        ),
+
+        url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.cta h2{
+    max-width:750px;
+
+    font-family:Georgia,serif;
+
+    font-size:55px;
+
+    font-weight:normal;
+
+    line-height:1.05;
+
+    margin-bottom:18px;
+}
+
+.cta p{
+    max-width:620px;
+
+    color:#dce6df;
+
+    font-size:14px;
+}
+
+.buttons{
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:50px;
+
+    padding:0 24px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.btn-green{
+    background:var(--light);
+
+    color:var(--dark);
+}
+
+.btn-green:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.25);
+}
+
+.btn-outline{
+    color:white;
+
+    border:1px solid rgba(255,255,255,.6);
+}
+
+.btn-outline:hover{
+    background:white;
+
+    color:var(--dark);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#0b2818;
+
+    color:white;
+
+    padding:65px 7% 25px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#b9c8bd;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.footer-links a{
+    display:block;
+
+    color:#b9c8bd;
+
+    font-size:13px;
+
+    margin-bottom:9px;
+}
+
+.footer-links a:hover{
+    color:var(--light);
+}
+
+.footer-motto{
+    margin-top:22px;
+
+    color:var(--light);
+
+    font-weight:bold;
+
+    font-size:18px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:35px;
+
+    padding-top:20px;
+
+    color:#899a8e;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .motto{
+        display:none;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .contact-grid,
+    .hours-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .hours-image{
+        min-height:350px;
+    }
+
+    .cta{
+        margin:70px 5%;
+
+        padding:45px 30px;
+    }
+
+    .cta h2{
+        font-size:45px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .contact-section,
+    .hours{
+        padding:75px 6%;
+    }
+
+    .location{
+        padding:0 6% 75px;
+    }
+
+    .form-box{
+        padding:30px 22px;
+    }
+
+    .location-box{
+        padding:20px;
+
+        min-height:500px;
+    }
+
+    .location-card{
+        padding:22px;
+    }
+
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+.image-fallback{
+    background:
+        linear-gradient(
+            135deg,
+            #315f3b,
+            #9cb65d
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-family:Georgia,serif;
+
+    font-size:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="index.html" class="logo">
+
+            Rahul <span>Organic Farm</span>
+
+        </a>
+
+        <div class="motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="farming.html">
+            Our Farming
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="contact.html"
+           class="active">
+
+            Contact Us
+
+        </a>
+
+        <a href="cart.html"
+           class="cart-link">
+
+            🛒 Cart
+
+            <span class="cart-count"
+                  id="cartCount">
+
+                0
+
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+
+            Get In Touch
+
+        </div>
+
+        <h1>
+
+            Let's talk
+            <span>farm.</span>
+
+        </h1>
+
+        <p>
+
+            Have a question about our farm, products,
+            farming practices or orders? We'd love to
+            hear from you.
+
+        </p>
+
+        <div class="hero-motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT DETAILS + FORM
+========================================================= -->
+
+<section class="contact-section">
+
+    <div class="contact-grid">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div>
+
+            <div class="section-label">
+
+                Contact Rahul Organic Farm
+
+            </div>
+
+            <h2 class="section-title">
+
+                We're here
+                to help.
+
+            </h2>
+
+            <p class="description">
+
+                Whether you want to know more about our
+                products, place an enquiry or simply want
+                to connect with us, feel free to reach out.
+
+            </p>
+
+
+            <div class="contact-info">
+
+
+                <!-- PHONE -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Phone
+                        </h3>
+
+                        <p>
+
+                            <a href="tel:+919177919291">
+
+                                +91 91779 19291
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADDRESS -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Farm Address
+                        </h3>
+
+                        <p>
+
+                            Road No. 7,<br>
+
+                            Ramana Colony,<br>
+
+                            Kurnool,<br>
+
+                            Andhra Pradesh – 518003,<br>
+
+                            India
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Email
+                        </h3>
+
+                        <p>
+
+                            <a href="mailto:hello@rahulorganicfarm.in">
+
+                                hello@rahulorganicfarm.in
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FARM -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        🌱
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Rahul Organic Farm
+                        </h3>
+
+                        <p>
+
+                            Fresh from our soil to your
+                            table.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="form-box">
+
+            <h2>
+                Send us a message
+            </h2>
+
+            <p>
+
+                Fill in the details below and we'll get
+                back to you.
+
+            </p>
+
+
+            <form id="contactForm">
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Your phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your email address"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Enquiry Type
+                    </label>
+
+                    <select
+                        id="subject"
+                        required
+                    >
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option>
+                            Product Enquiry
+                        </option>
+
+                        <option>
+                            Farm Visit
+                        </option>
+
+                        <option>
+                            Order Enquiry
+                        </option>
+
+                        <option>
+                            Wholesale Enquiry
+                        </option>
+
+                        <option>
+                            General Enquiry
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Send Message →
+
+                </button>
+
+
+                <div
+                    class="form-message"
+                    id="formMessage">
+
+                    Thank you! Your message has been
+                    received.
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LOCATION
+========================================================= -->
+
+<section class="location">
+
+    <div class="location-box">
+
+        <div class="location-card">
+
+            <div class="section-label">
+
+                Visit Us
+
+            </div>
+
+            <h2>
+
+                Find Rahul Organic Farm
+
+            </h2>
+
+            <p>
+
+                Road No. 7, Ramana Colony,
+                Kurnool, Andhra Pradesh – 518003.
+
+            </p>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Road+No+7+Ramana+Colony+Kurnool+Andhra+Pradesh+518003"
+                target="_blank">
+
+                Open Location in Maps →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BUSINESS HOURS
+========================================================= -->
+
+<section class="hours">
+
+    <div class="hours-grid">
+
+
+        <div class="hours-image"></div>
+
+
+        <div>
+
+            <div class="section-label">
+
+                When To Reach Us
+
+            </div>
+
+            <h2 class="section-title">
+
+                We're happy
+                to hear from you.
+
+            </h2>
+
+            <p class="description">
+
+                Contact us during our regular working hours
+                for product enquiries, farm information
+                and general assistance.
+
+            </p>
+
+
+            <div class="hours-list">
+
+                <div class="hour-row">
+
+                    <strong>
+                        Monday – Friday
+                    </strong>
+
+                    <span>
+                        9:00 AM – 6:00 PM
+                    </span>
+
+                </div>
+
+                <div class="hour-row">
+
+                    <strong>
+                        Saturday
+                    </strong>
+
+                    <span>
+                        9:00 AM – 5:00 PM
+                    </span>
+
+                </div>
+
+                <div class="hour-row">
+
+                    <strong>
+                        Sunday
+                    </strong>
+
+                    <span>
+                        9:00 AM – 1:00 PM
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+    <div>
+
+        <div class="section-label"
+             style="color:#c4df73;">
+
+            Rahul Organic Farm
+
+        </div>
+
+        <h2>
+
+            Fresh food begins
+            with good farming.
+
+        </h2>
+
+        <p>
+
+            Explore our farming practices, discover our
+            products and see the farm through our gallery.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="index.html"
+                class="btn btn-green">
+
+                Back To Home →
+
+            </a>
+
+            <a
+                href="farming.html"
+                class="btn btn-outline">
+
+                Our Farming
+
+            </a>
+
+            <a
+                href="gallery.html"
+                class="btn btn-outline">
+
+                Gallery
+
+            </a>
+
+            <a
+                href="products.html"
+                class="btn btn-outline">
+
+                Shop Products
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                Rahul Organic Farm
+            </h3>
+
+            <p>
+
+                Fresh from our soil to your table.
+                Responsible farming, fresh produce
+                and a healthier tomorrow.
+
+            </p>
+
+            <div class="footer-motto">
+
+                <span>జై జవాన్</span>
+
+                &nbsp;•&nbsp;
+
+                <span>జై కిసాన్</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="farming.html">
+                Our Farming
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Road No. 7,
+                Ramana Colony,
+                Kurnool,
+                Andhra Pradesh – 518003
+            </p>
+
+            <p>
+                +91 91779 19291
+            </p>
+
+            <p>
+                hello@rahulorganicfarm.in
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Rahul Organic Farm.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   CART COUNT
+========================================================= */
+
+let cart =
+JSON.parse(
+    localStorage.getItem("rahulOrganicCart")
+) || [];
+
+
+function updateCartCount(){
+
+    let totalQuantity = 0;
+
+    cart.forEach(function(item){
+
+        totalQuantity +=
+        Number(item.quantity) || 0;
+
+    });
+
+    const cartCount =
+    document.getElementById("cartCount");
+
+    if(cartCount){
+
+        cartCount.textContent =
+        totalQuantity;
+
+    }
+
+}
+
+
+updateCartCount();
+
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+const contactForm =
+document.getElementById("contactForm");
+
+const formMessage =
+document.getElementById("formMessage");
+
+
+contactForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+        formMessage.style.display =
+        "block";
+
+        contactForm.reset();
+
+        setTimeout(function(){
+
+            formMessage.style.display =
+            "none";
+
+        },5000);
+
+    }
+);
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+document.querySelectorAll("img")
+.forEach(function(image){
+
+    image.addEventListener(
+        "error",
+        function(){
+
+            this.style.display =
+            "none";
+
+            const parent =
+            this.parentElement;
+
+            parent.classList.add(
+                "image-fallback"
+            );
+
+            parent.innerHTML =
+            "<span>Rahul Organic Farm</span>";
+
+        }
+    );
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

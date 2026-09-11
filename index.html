@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rahul Organic Farm | జై జవాన్ • జై కిసాన్</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            background: #f5f3ea;
+            color: #173522;
+            line-height: 1.6;
+        }
+
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        :root {
+
+            --dark-green: #103b24;
+
+            --green: #2e7046;
+
+            --light-green: #b8d96b;
+
+            --cream: #f5f3ea;
+
+            --white: #ffffff;
+
+            --dark: #173522;
+
+            --muted: #68756b;
+
+            --soft-green: #e7eddf;
+
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            min-height: 78px;
+
+            padding: 12px 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+
+            z-index: 9999;
+
+            background: rgba(8, 36, 21, 0.90);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+
+        }
+
+
+        /* =========================================================
+           LOGO AREA
+        ========================================================= */
+
+        .brand-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            min-width: 250px;
+
+        }
+
+
+        .logo {
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .logo span {
+
+            color: var(--light-green);
+
+        }
+
+
+        /* =========================================================
+           TELUGU SLOGAN
+        ========================================================= */
+
+        .slogan {
+
+            color: #e0eadf;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.5px;
+
+            white-space: nowrap;
+
+            padding-left: 20px;
+
+            border-left: 1px solid rgba(255,255,255,0.25);
+
+        }
+
+
+        .slogan span {
+
+            color: var(--light-green);
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 24px;
+
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+
+            white-space: nowrap;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--light-green);
+
+        }
+
+
+        .nav-links a.active {
+
+            color: var(--light-green);
+
+        }
+
+
+        .nav-links a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -9px;
+
+            width: 100%;
+
+            height: 2px;
+
+            background: var(--light-green);
+
+        }
+
+
+        /* =========================================================
+           CART
+        ========================================================= */
+
+        .cart-link {
+
+            padding: 9px 16px;
+
+            border-radius: 30px;
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            background: rgba(255,255,255,0.08);
+
+        }
+
+
+        .cart-link:hover {
+
+            color: var(--dark-green) !important;
+
+            background: var(--light-green);
+
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 170px 8% 110px;
+
+            color: white;
+
+
+            /* =====================================================
+               HERO IMAGE
+
+               CHANGE ONLY THIS URL WHEN YOU WANT A NEW IMAGE.
+            ====================================================== */
+
+            background-image:
+
+                linear-gradient(
+                    90deg,
+                    rgba(4,27,15,0.92),
+                    rgba(4,27,15,0.62),
+                    rgba(4,27,15,0.18)
+                ),
+
+                url("https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=2200&q=90");
+
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+        }
+
+
+        .hero-label {
+
+            color: var(--light-green);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero h1 {
+
+            font-family: "DM Serif Display", serif;
+
+            font-weight: 400;
+
+            font-size: clamp(58px, 7vw, 100px);
+
+            line-height: 0.95;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .hero h1 span {
+
+            color: var(--light-green);
+
+        }
+
+
+        .hero-description {
+
+            max-width: 690px;
+
+            color: #e2eae4;
+
+            font-size: 17px;
+
+            line-height: 1.85;
+
+        }
+
+
+        /* =========================================================
+           HERO SLOGAN
+        ========================================================= */
+
+        .hero-slogan {
+
+            margin-top: 27px;
+
+            color: white;
+
+            font-size: 20px;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .hero-slogan span {
+
+            color: var(--light-green);
+
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .button-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+
+        }
+
+
+        .button {
+
+            min-height: 50px;
+
+            padding: 0 24px;
+
+            border-radius: 50px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .button-green {
+
+            color: var(--dark-green);
+
+            background: var(--light-green);
+
+        }
+
+
+        .button-green:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+
+        }
+
+
+        .button-outline {
+
+            color: white;
+
+            border: 1px solid rgba(255,255,255,0.55);
+
+        }
+
+
+        .button-outline:hover {
+
+            color: var(--dark-green);
+
+            background: white;
+
+        }
+
+
+        .button-dark {
+
+            color: white;
+
+            background: var(--dark-green);
+
+        }
+
+
+        .button-dark:hover {
+
+            background: var(--green);
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .button-light {
+
+            color: var(--dark-green);
+
+            background: white;
+
+        }
+
+
+        .button-light:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+        /* =========================================================
+           HERO BOTTOM
+        ========================================================= */
+
+        .hero-bottom {
+
+            position: absolute;
+
+            left: 8%;
+
+            right: 8%;
+
+            bottom: 35px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            color: rgba(255,255,255,0.70);
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .scroll {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .scroll-line {
+
+            width: 40px;
+
+            height: 1px;
+
+            background: rgba(255,255,255,0.6);
+
+        }
+
+
+        /* =========================================================
+           COMMON SECTIONS
+        ========================================================= */
+
+        .section {
+
+            padding: 105px 7%;
+
+        }
+
+
+        .section-label {
+
+            color: var(--green);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .section-title {
+
+            color: var(--dark-green);
+
+            font-family: "DM Serif Display", serif;
+
+            font-weight: 400;
+
+            font-size: clamp(40px, 5vw, 58px);
+
+            line-height: 1.08;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-text {
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            max-width: 700px;
+
+        }
+
+
+        /* =========================================================
+           INTRODUCTION
+        ========================================================= */
+
+        .intro {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 75px;
+
+            align-items: center;
+
+        }
+
+
+        .intro-image {
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            box-shadow: 0 25px 60px rgba(16,59,36,0.14);
+
+        }
+
+
+        .intro-image img {
+
+            height: 560px;
+
+            object-fit: cover;
+
+            transition: 0.7s ease;
+
+        }
+
+
+        .intro-image:hover img {
+
+            transform: scale(1.04);
+
+        }
+
+
+        .intro-content p {
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .intro-content .button {
+
+            margin-top: 10px;
+
+        }
+
+
+        /* =========================================================
+           HIGHLIGHTS
+        ========================================================= */
+
+        .highlights {
+
+            background: var(--soft-green);
+
+        }
+
+
+        .highlight-header {
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .highlight-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .highlight-card {
+
+            background: white;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            box-shadow: 0 15px 40px rgba(16,59,36,0.08);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .highlight-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 25px 50px rgba(16,59,36,0.13);
+
+        }
+
+
+        .highlight-card img {
+
+            height: 260px;
+
+            object-fit: cover;
+
+        }
+
+
+        .highlight-content {
+
+            padding: 28px;
+
+        }
+
+
+        .highlight-number {
+
+            color: var(--green);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .highlight-content h3 {
+
+            color: var(--dark-green);
+
+            font-size: 21px;
+
+            margin: 8px 0;
+
+        }
+
+
+        .highlight-content p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================================================
+           STATISTICS
+        ========================================================= */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            background: var(--dark-green);
+
+            padding: 55px 7%;
+
+        }
+
+
+        .stat {
+
+            text-align: center;
+
+            padding: 10px 20px;
+
+            border-right: 1px solid rgba(255,255,255,0.12);
+
+        }
+
+
+        .stat:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .stat strong {
+
+            display: block;
+
+            color: var(--light-green);
+
+            font-size: 40px;
+
+            line-height: 1.2;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .stat span {
+
+            color: #c4d2c9;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =========================================================
+           PRODUCTS
+        ========================================================= */
+
+        .products-top {
+
+            display: flex;
+
+            align-items: end;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .product-card {
+
+            overflow: hidden;
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow: 0 15px 35px rgba(16,59,36,0.08);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .product-card:hover {
+
+            transform: translateY(-6px);
+
+        }
+
+
+        .product-card img {
+
+            height: 230px;
+
+            object-fit: cover;
+
+        }
+
+
+        .product-info {
+
+            padding: 20px;
+
+        }
+
+
+        .product-info h3 {
+
+            color: var(--dark-green);
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .product-info p {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+        }
+
+
+        .price {
+
+            color: var(--green);
+
+            font-weight: 800;
+
+            margin-top: 10px;
+
+        }
+
+
+        /* =========================================================
+           GALLERY
+        ========================================================= */
+
+        .gallery-section {
+
+            background: #f0eee5;
+
+        }
+
+
+        .gallery-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 30px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.4fr 1fr 1fr;
+
+            grid-template-rows: 250px 250px;
+
+            gap: 15px;
+
+        }
+
+
+        .gallery-item {
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            position: relative;
+
+        }
+
+
+        .gallery-item.large {
+
+            grid-row: span 2;
+
+        }
+
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.6s ease;
+
+        }
+
+
+        .gallery-item:hover img {
+
+            transform: scale(1.06);
+
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+
+            margin: 0 7% 105px;
+
+            min-height: 410px;
+
+            padding: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            border-radius: 30px;
+
+            color: white;
+
+
+            background-image:
+
+                linear-gradient(
+                    90deg,
+                    rgba(4,29,16,0.90),
+                    rgba(4,29,16,0.25)
+                ),
+
+                url("https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=2200&q=90");
+
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        .cta-content {
+
+            max-width: 700px;
+
+        }
+
+
+        .cta .section-label {
+
+            color: var(--light-green);
+
+        }
+
+
+        .cta h2 {
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: clamp(42px, 5vw, 62px);
+
+            font-weight: 400;
+
+            line-height: 1.05;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .cta p {
+
+            color: #dce6df;
+
+            max-width: 600px;
+
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            background: #0b2818;
+
+            color: white;
+
+            padding: 65px 7% 25px;
+
+        }
+
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 60px;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        footer h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        footer p {
+
+            color: #b9c8bd;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .footer-links a {
+
+            display: block;
+
+            color: #b9c8bd;
+
+            font-size: 13px;
+
+            margin-bottom: 9px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .footer-links a:hover {
+
+            color: var(--light-green);
+
+        }
+
+
+        /* =========================================================
+           FOOTER SLOGAN
+        ========================================================= */
+
+        .footer-motto {
+
+            margin-top: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            color: var(--light-green);
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .footer-motto .dot {
+
+            color: white;
+
+        }
+
+
+        .footer-bottom {
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.12);
+
+            color: #899a8e;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1250px) {
+
+            .slogan {
+
+                display: none;
+
+            }
+
+            .nav-links {
+
+                gap: 16px;
+
+            }
+
+        }
+
+
+        @media (max-width: 1050px) {
+
+            .intro {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .highlight-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+
+            .product-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            .navbar {
+
+                padding: 12px 5%;
+
+            }
+
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+
+            .brand-area {
+
+                min-width: auto;
+
+            }
+
+
+            .hero {
+
+                padding: 145px 7% 100px;
+
+                background-attachment: scroll;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 58px;
+
+            }
+
+
+            .hero-bottom {
+
+                display: none;
+
+            }
+
+
+            .hero-slogan {
+
+                font-size: 17px;
+
+            }
+
+
+            .section {
+
+                padding: 75px 6%;
+
+            }
+
+
+            .highlight-grid,
+
+            .product-grid,
+
+            .stats,
+
+            .footer-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .stat {
+
+                border-right: none;
+
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+
+                padding: 20px;
+
+            }
+
+
+            .stat:last-child {
+
+                border-bottom: none;
+
+            }
+
+
+            .products-top,
+
+            .gallery-header {
+
+                display: block;
+
+            }
+
+
+            .products-top .button,
+
+            .gallery-header .button {
+
+                margin-top: 20px;
+
+            }
+
+
+            .gallery-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+                grid-template-rows: 220px 220px 220px;
+
+            }
+
+
+            .gallery-item.large {
+
+                grid-column: span 2;
+
+                grid-row: span 1;
+
+            }
+
+
+            .cta {
+
+                margin: 0 5% 75px;
+
+                padding: 40px 30px;
+
+            }
+
+
+            .intro-image img {
+
+                height: 400px;
+
+            }
+
+
+            .footer-motto {
+
+                font-size: 16px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+
+         ALL PAGES ARE CONNECTED HERE
+    ========================================================== -->
+
+    <header class="navbar">
+
+
+        <div class="brand-area">
+
+
+            <!-- LOGO → HOME -->
+
+            <a href="index.html" class="logo">
+
+                Rahul <span>Organic Farm</span>
+
+            </a>
+
+
+            <!-- TELUGU MOTTO -->
+
+            <div class="slogan">
+
+                <span>జై జవాన్</span>
+
+                &nbsp;•&nbsp;
+
+                <span>జై కిసాన్</span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================================
+             EVERY PAGE LINK
+        ====================================================== -->
+
+        <nav class="nav-links">
+
+
+            <a href="index.html" class="active">
+
+                Home
+
+            </a>
+
+
+            <a href="farming.html">
+
+                Our Farming
+
+            </a>
+
+
+            <a href="gallery.html">
+
+                Gallery
+
+            </a>
+
+
+            <a href="products.html">
+
+                Products
+
+            </a>
+
+
+            <a href="about.html">
+
+                About Us
+
+            </a>
+
+
+            <a href="contact.html">
+
+                Contact Us
+
+            </a>
+
+
+            <a href="cart.html" class="cart-link">
+
+                🛒 Cart
+
+            </a>
+
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="hero">
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-label">
+
+                Naturally Grown • Farm Fresh • Responsibly Produced
+
+            </div>
+
+
+            <h1>
+
+                From our
+
+                <span>farm</span>
+
+                to your table.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Welcome to Rahul Organic Farm — where healthy
+
+                soil, thoughtful farming and fresh produce come
+
+                together. We grow with care and bring the goodness
+
+                of the farm closer to your home.
+
+            </p>
+
+
+            <!-- TELUGU MOTTO -->
+
+            <div class="hero-slogan">
+
+                <span>జై జవాన్</span>
+
+                &nbsp;•&nbsp;
+
+                <span>జై కిసాన్</span>
+
+            </div>
+
+
+            <div class="button-row">
+
+
+                <!-- HOME → FARMING -->
+
+                <a href="farming.html"
+                   class="button button-green">
+
+                    Explore Our Farming →
+
+                </a>
+
+
+                <!-- HOME → PRODUCTS -->
+
+                <a href="products.html"
+                   class="button button-outline">
+
+                    Shop Fresh Products
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-bottom">
+
+
+            <span>
+
+                RAHUL ORGANIC FARM
+
+            </span>
+
+
+            <div class="scroll">
+
+                <span class="scroll-line"></span>
+
+                Scroll To Explore
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         INTRODUCTION
+    ========================================================== -->
+
+    <section class="section">
+
+
+        <div class="intro">
+
+
+            <div class="intro-image">
+
+
+                <!-- =================================================
+                     IMAGE — CHANGE THIS URL ANYTIME
+                ================================================== -->
+
+                <img
+                    src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=90"
+                    alt="Rahul Organic Farm"
+                >
+
+            </div>
+
+
+            <div class="intro-content">
+
+
+                <div class="section-label">
+
+                    Welcome To Rahul Organic Farm
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Farming with
+
+                    purpose.
+
+                </h2>
+
+
+                <p>
+
+                    Great food begins long before it reaches your
+
+                    kitchen. It starts with healthy soil, careful
+
+                    cultivation and respect for the land.
+
+                </p>
+
+
+                <p>
+
+                    At Rahul Organic Farm, we believe farming is
+
+                    about building a healthier relationship between
+
+                    people, food and nature.
+
+                </p>
+
+
+                <!-- HOME → ABOUT -->
+
+                <a href="about.html"
+                   class="button button-dark">
+
+                    Discover Our Story →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FARMING HIGHLIGHTS
+    ========================================================== -->
+
+    <section class="section highlights">
+
+
+        <div class="highlight-header">
+
+
+            <div class="section-label">
+
+                Our Philosophy
+
+            </div>
+
+
+            <h2 class="section-title">
+
+                Simple farming.
+
+                Better food.
+
+            </h2>
+
+
+            <p class="section-text">
+
+                We focus on the fundamentals — healthy soil,
+
+                responsible cultivation and careful harvesting.
+
+            </p>
+
+        </div>
+
+
+        <div class="highlight-grid">
+
+
+            <!-- CARD 1 -->
+
+            <div class="highlight-card">
+
+
+                <!-- CHANGE IMAGE HERE -->
+
+    <img
+    src="healthy-soil.png"
+    alt="Healthy soil"
+>
+               <div class="highlight-content">
+
+
+                    <div class="highlight-number">
+
+                        01 — SOIL
+
+                    </div>
+
+
+                    <h3>
+
+                        Healthy Soil
+
+                    </h3>
+
+
+                    <p>
+
+                        We believe healthy soil is the foundation
+
+                        of healthy crops and a productive farm.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="highlight-card">
+
+
+                <!-- CHANGE IMAGE HERE -->
+
+                <img
+                    src="https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1500&q=90"
+                    alt="Natural farming"
+                >
+
+
+                <div class="highlight-content">
+
+
+                    <div class="highlight-number">
+
+                        02 — NATURE
+
+                    </div>
+
+
+                    <h3>
+
+                        Work With Nature
+
+                    </h3>
+
+
+                    <p>
+
+                        Seasons, weather and natural conditions guide
+
+                        the way we plan and grow our crops.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="highlight-card">
+
+
+                <!-- CHANGE IMAGE HERE -->
+
+                <img
+                    src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1500&q=90"
+                    alt="Fresh vegetables"
+                >
+
+
+                <div class="highlight-content">
+
+
+                    <div class="highlight-number">
+
+                        03 — HARVEST
+
+                    </div>
+
+
+                    <h3>
+
+                        Fresh Harvest
+
+                    </h3>
+
+
+                    <p>
+
+                        We handle produce carefully from harvest to
+
+                        the moment it reaches our customers.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         STATISTICS
+    ========================================================== -->
+
+    <section class="stats">
+
+
+        <div class="stat">
+
+            <strong>25+</strong>
+
+            <span>Farm Crops</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>100%</strong>
+
+            <span>Farm Care</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>365</strong>
+
+            <span>Days Of Dedication</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>01</strong>
+
+            <span>Healthy Mission</span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PRODUCTS PREVIEW
+    ========================================================== -->
+
+    <section class="section">
+
+
+        <div class="products-top">
+
+
+            <div>
+
+
+                <div class="section-label">
+
+                    Farm Fresh
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Fresh from our fields.
+
+                </h2>
+
+
+                <p class="section-text">
+
+                    A preview of the fresh produce available from
+
+                    Rahul Organic Farm.
+
+                </p>
+
+            </div>
+
+
+            <!-- HOME → PRODUCTS -->
+
+            <a href="products.html"
+               class="button button-dark">
+
+                View All Products →
+
+            </a>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=1400&q=90"
+                    alt="Fresh tomatoes"
+                >
+
+
+                <div class="product-info">
+
+
+                    <h3>
+
+                        Fresh Tomatoes
+
+                    </h3>
+
+
+                    <p>
+
+                        Farm fresh seasonal tomatoes
+
+                    </p>
+
+
+                    <div class="price">
+
+                        ₹80 / kg
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?auto=format&fit=crop&w=1400&q=90"
+                    alt="Leafy vegetables"
+                >
+
+
+                <div class="product-info">
+
+
+                    <h3>
+
+                        Leafy Greens
+
+                    </h3>
+
+
+                    <p>
+
+                        Freshly harvested greens
+
+                    </p>
+
+
+                    <div class="price">
+
+                        ₹50 / bunch
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1447175008436-054170c2e979?auto=format&fit=crop&w=1400&q=90"
+                    alt="Fresh carrots"
+                >
+
+
+                <div class="product-info">
+
+
+                    <h3>
+
+                        Fresh Carrots
+
+                    </h3>
+
+
+                    <p>
+
+                        Naturally grown carrots
+
+                    </p>
+
+
+                    <div class="price">
+
+                        ₹70 / kg
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=1400&q=90"
+                    alt="Fresh farm vegetables"
+                >
+
+
+                <div class="product-info">
+
+
+                    <h3>
+
+                        Farm Basket
+
+                    </h3>
+
+
+                    <p>
+
+                        Seasonal fresh produce
+
+                    </p>
+
+
+                    <div class="price">
+
+                        ₹399 / basket
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         GALLERY PREVIEW
+    ========================================================== -->
+
+    <section class="section gallery-section">
+
+
+        <div class="gallery-header">
+
+
+            <div>
+
+
+                <div class="section-label">
+
+                    Farm Gallery
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Life at the farm.
+
+                </h2>
+
+
+                <p class="section-text">
+
+                    Take a glimpse at the fields, crops and everyday
+
+                    moments behind Rahul Organic Farm.
+
+                </p>
+
+            </div>
+
+
+            <!-- HOME → GALLERY -->
+
+            <a href="gallery.html"
+               class="button button-dark">
+
+                View Full Gallery →
+
+            </a>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <!-- IMAGE 1 -->
+
+            <div class="gallery-item large">
+
+                <img
+                    src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1800&q=90"
+                    alt="Farm plants"
+                >
+
+            </div>
+
+
+            <!-- IMAGE 2 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1400&q=90"
+                    alt="Organic farming"
+                >
+
+            </div>
+
+
+            <!-- IMAGE 3 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1400&q=90"
+                    alt="Farm field"
+                >
+
+            </div>
+
+
+            <!-- IMAGE 4 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=90"
+                    alt="Fresh vegetables"
+                >
+
+            </div>
+
+
+            <!-- IMAGE 5 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1400&q=90"
+                    alt="Green farm"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================== -->
+
+    <section class="cta">
+
+
+        <div class="cta-content">
+
+
+            <div class="section-label">
+
+                Rahul Organic Farm
+
+            </div>
+
+
+            <h2>
+
+                Good food begins
+
+                with good farming.
+
+            </h2>
+
+
+            <p>
+
+                Explore our farming practices, discover our
+
+                products, view the farm gallery or get in touch
+
+                with us.
+
+            </p>
+
+
+            <!-- CTA SLOGAN -->
+
+            <div class="hero-slogan">
+
+                <span>జై జవాన్</span>
+
+                &nbsp;•&nbsp;
+
+                <span>జై కిసాన్</span>
+
+            </div>
+
+
+            <div class="button-row">
+
+
+                <!-- CTA → FARMING -->
+
+                <a href="farming.html"
+                   class="button button-green">
+
+                    Our Farming →
+
+                </a>
+
+
+                <!-- CTA → GALLERY -->
+
+                <a href="gallery.html"
+                   class="button button-light">
+
+                    Gallery
+
+                </a>
+
+
+                <!-- CTA → PRODUCTS -->
+
+                <a href="products.html"
+                   class="button button-outline">
+
+                    Shop Products
+
+                </a>
+
+
+                <!-- CTA → CONTACT -->
+
+                <a href="contact.html"
+                   class="button button-outline">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+
+        <div class="footer-grid">
+
+
+            <!-- FARM INFORMATION -->
+
+            <div>
+
+
+                <h3>
+
+                    Rahul Organic Farm
+
+                </h3>
+
+
+                <p>
+
+                    Fresh from our soil to your table.
+
+                    Responsible farming, fresh produce and a
+
+                    healthier tomorrow.
+
+                </p>
+
+
+                <!-- TELUGU MOTTO -->
+
+                <div class="footer-motto">
+
+                    <span>జై జవాన్</span>
+
+                    <span class="dot">•</span>
+
+                    <span>జై కిసాన్</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ALL PAGE LINKS -->
+
+            <div class="footer-links">
+
+
+                <h3>
+
+                    Explore
+
+                </h3>
+
+
+                <a href="index.html">
+
+                    Home
+
+                </a>
+
+
+                <a href="farming.html">
+
+                    Our Farming
+
+                </a>
+
+
+                <a href="gallery.html">
+
+                    Gallery
+
+                </a>
+
+
+                <a href="products.html">
+
+                    Products
+
+                </a>
+
+
+                <a href="about.html">
+
+                    About Us
+
+                </a>
+
+
+                <a href="contact.html">
+
+                    Contact Us
+
+                </a>
+
+
+                <a href="cart.html">
+
+                    🛒 Cart
+
+                </a>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div>
+
+
+                <h3>
+
+                    Contact
+
+                </h3>
+
+
+                <p>
+
+                    Andhra Pradesh, India
+
+                </p>
+
+
+                <p>
+
+                    +91 98765 43210
+
+                </p>
+
+
+                <p>
+
+                    hello@rahulorganicfarm.in
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FINAL MOTTO -->
+
+        <div class="footer-motto">
+
+            <span>జై జవాన్</span>
+
+            <span class="dot">•</span>
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            © 2026 Rahul Organic Farm. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

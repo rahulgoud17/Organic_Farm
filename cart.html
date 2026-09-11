@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart | Rahul Organic Farm</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f3ea;
+    color:#183a24;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root{
+    --dark:#103b24;
+    --green:#2f7045;
+    --light:#c4df73;
+    --cream:#f5f3ea;
+    --white:#ffffff;
+    --text:#183a24;
+    --muted:#68756c;
+    --border:#dce4d8;
+    --danger:#b84535;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    min-height:78px;
+
+    padding:12px 5%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    z-index:9999;
+
+    background:rgba(8,35,20,.95);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+
+    font-size:22px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+.logo span{
+    color:var(--light);
+}
+
+.motto{
+    color:#e1eadf;
+
+    font-size:12px;
+
+    margin-left:20px;
+
+    padding-left:20px;
+
+    border-left:1px solid rgba(255,255,255,.3);
+}
+
+.motto span{
+    color:var(--light);
+
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.nav-links a{
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--light);
+}
+
+.cart-link{
+    position:relative;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    padding:8px 15px;
+
+    border-radius:30px;
+}
+
+.cart-link:hover{
+    background:var(--light);
+
+    color:var(--dark) !important;
+}
+
+.cart-count{
+    position:absolute;
+
+    top:-9px;
+    right:-7px;
+
+    min-width:21px;
+
+    height:21px;
+
+    padding:0 5px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#d95b35;
+
+    color:white;
+
+    border-radius:50%;
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.95),
+            rgba(3,27,14,.55),
+            rgba(3,27,14,.15)
+        ),
+
+        url("https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+    animation:heroZoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:108%;
+    }
+
+}
+
+.hero-content{
+    padding:135px 8% 65px;
+
+    max-width:850px;
+}
+
+.hero-small{
+    color:var(--light);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+
+    font-weight:normal;
+
+    font-size:clamp(50px,7vw,80px);
+
+    line-height:1;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--light);
+}
+
+.hero p{
+    max-width:650px;
+
+    color:#e1e9e3;
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+.hero-motto{
+    margin-top:18px;
+
+    font-size:17px;
+
+    font-weight:bold;
+}
+
+.hero-motto span{
+    color:var(--light);
+}
+
+
+/* =========================================================
+   CART SECTION
+========================================================= */
+
+.cart-section{
+    padding:100px 7%;
+
+    background:var(--cream);
+}
+
+.cart-layout{
+    display:grid;
+
+    grid-template-columns:
+        1fr 370px;
+
+    gap:35px;
+
+    align-items:start;
+}
+
+
+/* =========================================================
+   CART HEADER
+========================================================= */
+
+.cart-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    margin-bottom:25px;
+}
+
+.section-label{
+    color:var(--green);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+
+    color:var(--dark);
+
+    font-size:clamp(38px,5vw,55px);
+
+    font-weight:normal;
+
+    line-height:1;
+}
+
+
+/* =========================================================
+   CART ITEMS
+========================================================= */
+
+.cart-items{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.cart-item{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    display:grid;
+
+    grid-template-columns:
+        105px 1fr auto;
+
+    gap:20px;
+
+    align-items:center;
+
+    transition:.3s;
+}
+
+.cart-item:hover{
+    box-shadow:
+        0 15px 35px rgba(16,59,36,.08);
+}
+
+.cart-image{
+    width:105px;
+
+    height:105px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    background:#e5eadf;
+}
+
+.cart-image img{
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+.cart-info h3{
+    font-family:Georgia,serif;
+
+    color:var(--dark);
+
+    font-size:23px;
+
+    font-weight:normal;
+
+    margin-bottom:4px;
+}
+
+.cart-info p{
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+.cart-price{
+    color:var(--green);
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    margin-top:8px;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.quantity-box{
+    display:flex;
+
+    align-items:center;
+
+    gap:0;
+
+    margin-top:15px;
+}
+
+.quantity-btn{
+    width:32px;
+
+    height:32px;
+
+    border:1px solid var(--border);
+
+    background:#f4f7f0;
+
+    color:var(--dark);
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.2s;
+}
+
+.quantity-btn:first-child{
+    border-radius:8px 0 0 8px;
+}
+
+.quantity-btn:last-child{
+    border-radius:0 8px 8px 0;
+}
+
+.quantity-btn:hover{
+    background:var(--light);
+}
+
+.quantity{
+    width:40px;
+
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:white;
+
+    border-top:1px solid var(--border);
+
+    border-bottom:1px solid var(--border);
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   ITEM RIGHT SIDE
+========================================================= */
+
+.item-right{
+    text-align:right;
+
+    min-width:115px;
+}
+
+.item-total{
+    font-family:Georgia,serif;
+
+    color:var(--dark);
+
+    font-size:21px;
+
+    margin-bottom:14px;
+}
+
+.remove-btn{
+    border:none;
+
+    background:none;
+
+    color:var(--danger);
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.remove-btn:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+.empty-cart{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:80px 30px;
+
+    text-align:center;
+}
+
+.empty-icon{
+    font-size:60px;
+
+    margin-bottom:15px;
+}
+
+.empty-cart h2{
+    font-family:Georgia,serif;
+
+    color:var(--dark);
+
+    font-size:35px;
+
+    font-weight:normal;
+
+    margin-bottom:10px;
+}
+
+.empty-cart p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons{
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:48px;
+
+    padding:0 22px;
+
+    border-radius:50px;
+
+    border:none;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn-green{
+    background:var(--dark);
+
+    color:white;
+}
+
+.btn-green:hover{
+    background:var(--green);
+
+    transform:translateY(-2px);
+}
+
+.btn-light{
+    background:#e5eddc;
+
+    color:var(--dark);
+}
+
+.btn-light:hover{
+    background:var(--light);
+}
+
+.btn-danger{
+    background:#f7e4df;
+
+    color:var(--danger);
+}
+
+.btn-danger:hover{
+    background:#eed0c8;
+}
+
+
+/* =========================================================
+   ORDER SUMMARY
+========================================================= */
+
+.summary{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:23px;
+
+    padding:30px;
+
+    position:sticky;
+
+    top:100px;
+
+    box-shadow:
+        0 15px 40px rgba(16,59,36,.06);
+}
+
+.summary-label{
+    color:var(--green);
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.summary h2{
+    font-family:Georgia,serif;
+
+    color:var(--dark);
+
+    font-size:34px;
+
+    font-weight:normal;
+
+    margin-bottom:25px;
+}
+
+.summary-row{
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:13px 0;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+.summary-row strong{
+    color:var(--dark);
+}
+
+.summary-total{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 0;
+
+    color:var(--dark);
+}
+
+.summary-total span:first-child{
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.summary-total span:last-child{
+    font-family:Georgia,serif;
+
+    font-size:31px;
+}
+
+.checkout-btn{
+    width:100%;
+
+    min-height:54px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--dark);
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.checkout-btn:hover{
+    background:var(--green);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(16,59,36,.2);
+}
+
+.secure-note{
+    text-align:center;
+
+    color:#8a968c;
+
+    font-size:10px;
+
+    margin-top:14px;
+}
+
+
+/* =========================================================
+   FARM NOTE
+========================================================= */
+
+.farm-note{
+    margin-top:20px;
+
+    padding:18px;
+
+    background:#edf3e7;
+
+    border-radius:15px;
+}
+
+.farm-note strong{
+    display:block;
+
+    color:var(--dark);
+
+    font-size:12px;
+
+    margin-bottom:4px;
+}
+
+.farm-note p{
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    margin:0 7% 100px;
+
+    padding:70px;
+
+    border-radius:30px;
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3,27,14,.95),
+            rgba(3,27,14,.25)
+        ),
+
+        url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.cta h2{
+    max-width:700px;
+
+    font-family:Georgia,serif;
+
+    font-size:55px;
+
+    font-weight:normal;
+
+    line-height:1.05;
+
+    margin-bottom:18px;
+}
+
+.cta p{
+    max-width:600px;
+
+    color:#dce6df;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#0b2818;
+
+    color:white;
+
+    padding:65px 7% 25px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap:50px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#b9c8bd;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.footer-links a{
+    display:block;
+
+    color:#b9c8bd;
+
+    font-size:13px;
+
+    margin-bottom:9px;
+}
+
+.footer-links a:hover{
+    color:var(--light);
+}
+
+.footer-motto{
+    margin-top:22px;
+
+    color:var(--light);
+
+    font-weight:bold;
+
+    font-size:18px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:35px;
+
+    padding-top:20px;
+
+    color:#899a8e;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .motto{
+        display:none;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .cart-layout{
+        grid-template-columns:1fr;
+    }
+
+    .summary{
+        position:static;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .cart-section{
+        padding:75px 6%;
+    }
+
+    .cart-item{
+        grid-template-columns:
+            80px 1fr;
+
+        gap:15px;
+    }
+
+    .cart-image{
+        width:80px;
+        height:80px;
+    }
+
+    .item-right{
+        grid-column:2;
+
+        text-align:left;
+
+        min-width:0;
+    }
+
+    .item-total{
+        margin-bottom:8px;
+    }
+
+    .summary{
+        padding:25px 20px;
+    }
+
+    .cta{
+        margin:0 5% 70px;
+
+        padding:45px 30px;
+    }
+
+    .cta h2{
+        font-size:42px;
+    }
+
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+.image-fallback{
+    background:
+        linear-gradient(
+            135deg,
+            #315f3b,
+            #9cb65d
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-family:Georgia,serif;
+
+    font-size:15px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="index.html" class="logo">
+
+            Rahul <span>Organic Farm</span>
+
+        </a>
+
+        <div class="motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="farming.html">
+            Our Farming
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+        <a href="cart.html"
+           class="cart-link active">
+
+            🛒 Cart
+
+            <span class="cart-count"
+                  id="cartCount">
+
+                0
+
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+
+            Your Farm Basket
+
+        </div>
+
+        <h1>
+
+            Fresh from
+            <span>our farm.</span>
+
+        </h1>
+
+        <p>
+
+            Review the fresh products you've selected
+            from Rahul Organic Farm before placing
+            your order.
+
+        </p>
+
+        <div class="hero-motto">
+
+            <span>జై జవాన్</span>
+
+            &nbsp;•&nbsp;
+
+            <span>జై కిసాన్</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CART
+========================================================= -->
+
+<section class="cart-section">
+
+
+    <div class="cart-header">
+
+        <div>
+
+            <div class="section-label">
+
+                Rahul Organic Farm
+
+            </div>
+
+            <h2 class="section-title">
+
+                Your Cart
+
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="cart-layout">
+
+
+        <!-- =================================================
+             CART ITEMS
+        ================================================== -->
+
+        <div>
+
+            <div
+                class="cart-items"
+                id="cartItems">
+
+            </div>
+
+
+            <!-- EMPTY CART -->
+
+            <div
+                class="empty-cart"
+                id="emptyCart"
+                style="display:none;">
+
+                <div class="empty-icon">
+                    🛒
+                </div>
+
+                <h2>
+                    Your cart is empty
+                </h2>
+
+                <p>
+
+                    Looks like you haven't added
+                    anything from our farm yet.
+
+                </p>
+
+                <a
+                    href="products.html"
+                    class="btn btn-green">
+
+                    Explore Farm Products →
+
+                </a>
+
+            </div>
+
+
+            <!-- CART BUTTONS -->
+
+            <div
+                id="cartActions"
+                style="
+                margin-top:20px;
+                display:flex;
+                justify-content:space-between;
+                gap:15px;
+                flex-wrap:wrap;
+                ">
+
+                <a
+                    href="products.html"
+                    class="btn btn-light">
+
+                    ← Continue Shopping
+
+                </a>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="clearCart()">
+
+                    🗑 Clear Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ORDER SUMMARY
+        ================================================== -->
+
+        <aside class="summary">
+
+            <div class="summary-label">
+
+                Order Summary
+
+            </div>
+
+            <h2>
+                Your Order
+            </h2>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Items
+                </span>
+
+                <strong id="summaryItems">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="subtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong>
+                    To be confirmed
+                </strong>
+
+            </div>
+
+
+            <div class="summary-total">
+
+                <span>
+                    Estimated Total
+                </span>
+
+                <span id="total">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <button
+                class="checkout-btn"
+                id="checkoutBtn"
+                onclick="checkout()">
+
+                Proceed to Checkout →
+
+            </button>
+
+
+            <div class="secure-note">
+
+                🌱 Fresh farm products •
+                Order confirmation by phone
+
+            </div>
+
+
+            <div class="farm-note">
+
+                <strong>
+                    📍 Farm Location
+                </strong>
+
+                <p>
+
+                    Road No. 7, Ramana Colony,
+                    Kurnool, Andhra Pradesh – 518003.
+
+                </p>
+
+            </div>
+
+
+        </aside>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+    <div>
+
+        <div
+            class="section-label"
+            style="color:#c4df73;">
+
+            Rahul Organic Farm
+
+        </div>
+
+        <h2>
+
+            Want to add
+            something fresh?
+
+        </h2>
+
+        <p>
+
+            Explore our seasonal vegetables, fruits,
+            farm honey, eggs and other products.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="products.html"
+                class="btn btn-green">
+
+                Browse Products →
+
+            </a>
+
+            <a
+                href="farming.html"
+                class="btn btn-outline">
+
+                See Our Farming
+
+            </a>
+
+            <a
+                href="contact.html"
+                class="btn btn-outline">
+
+                Contact Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                Rahul Organic Farm
+            </h3>
+
+            <p>
+
+                Fresh from our soil to your table.
+                Responsible farming, fresh produce
+                and a healthier tomorrow.
+
+            </p>
+
+            <div class="footer-motto">
+
+                <span>జై జవాన్</span>
+
+                &nbsp;•&nbsp;
+
+                <span>జై కిసాన్</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="farming.html">
+                Our Farming
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Road No. 7,
+                Ramana Colony,
+                Kurnool,
+                Andhra Pradesh – 518003
+            </p>
+
+            <p>
+                +91 91779 19291
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Rahul Organic Farm.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   GET CART FROM LOCAL STORAGE
+========================================================= */
+
+let cart =
+JSON.parse(
+    localStorage.getItem("rahulOrganicCart")
+) || [];
+
+
+/* =========================================================
+   SAVE CART
+========================================================= */
+
+function saveCart(){
+
+    localStorage.setItem(
+        "rahulOrganicCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* =========================================================
+   FORMAT PRICE
+========================================================= */
+
+function formatPrice(price){
+
+    return "₹" +
+        Number(price).toLocaleString(
+            "en-IN"
+        );
+
+}
+
+
+/* =========================================================
+   UPDATE CART COUNT
+========================================================= */
+
+function updateCartCount(){
+
+    let totalQuantity = 0;
+
+    cart.forEach(function(item){
+
+        totalQuantity +=
+            Number(item.quantity) || 0;
+
+    });
+
+    const cartCount =
+        document.getElementById(
+            "cartCount"
+        );
+
+    cartCount.textContent =
+        totalQuantity;
+
+}
+
+
+/* =========================================================
+   DISPLAY CART
+========================================================= */
+
+function displayCart(){
+
+    const cartItems =
+        document.getElementById(
+            "cartItems"
+        );
+
+    const emptyCart =
+        document.getElementById(
+            "emptyCart"
+        );
+
+    const cartActions =
+        document.getElementById(
+            "cartActions"
+        );
+
+    const summaryItems =
+        document.getElementById(
+            "summaryItems"
+        );
+
+    const subtotalElement =
+        document.getElementById(
+            "subtotal"
+        );
+
+    const totalElement =
+        document.getElementById(
+            "total"
+        );
+
+
+    cartItems.innerHTML = "";
+
+
+    /* EMPTY CART */
+
+    if(cart.length === 0){
+
+        emptyCart.style.display =
+            "block";
+
+        cartActions.style.display =
+            "none";
+
+        summaryItems.textContent =
+            "0";
+
+        subtotalElement.textContent =
+            "₹0";
+
+        totalElement.textContent =
+            "₹0";
+
+        updateCartCount();
+
+        return;
+
+    }
+
+
+    emptyCart.style.display =
+        "none";
+
+    cartActions.style.display =
+        "flex";
+
+
+    let subtotal = 0;
+
+    let totalQuantity = 0;
+
+
+    /* CREATE CART ITEMS */
+
+    cart.forEach(function(item,index){
+
+        const price =
+            Number(item.price) || 0;
+
+        const quantity =
+            Number(item.quantity) || 1;
+
+        const itemTotal =
+            price * quantity;
+
+
+        subtotal += itemTotal;
+
+        totalQuantity += quantity;
+
+
+        const cartItem =
+            document.createElement(
+                "div"
+            );
+
+        cartItem.className =
+            "cart-item";
+
+
+        cartItem.innerHTML = `
+
+            <div class="cart-image">
+
+                <img
+                    src="${item.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80'}"
+                    alt="${item.name || 'Farm Product'}"
+                >
+
+            </div>
+
+
+            <div class="cart-info">
+
+                <h3>
+                    ${item.name || 'Farm Product'}
+                </h3>
+
+                <p>
+                    Fresh from Rahul Organic Farm
+                </p>
+
+                <div class="cart-price">
+
+                    ${formatPrice(price)}
+                    each
+
+                </div>
+
+
+                <div class="quantity-box">
+
+                    <button
+                        class="quantity-btn"
+                        onclick="changeQuantity(${index},-1)">
+
+                        −
+
+                    </button>
+
+
+                    <div class="quantity">
+
+                        ${quantity}
+
+                    </div>
+
+
+                    <button
+                        class="quantity-btn"
+                        onclick="changeQuantity(${index},1)">
+
+                        +
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="item-right">
+
+                <div class="item-total">
+
+                    ${formatPrice(itemTotal)}
+
+                </div>
+
+
+                <button
+                    class="remove-btn"
+                    onclick="removeItem(${index})">
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        cartItems.appendChild(
+            cartItem
+        );
+
+    });
+
+
+    /* UPDATE SUMMARY */
+
+    summaryItems.textContent =
+        totalQuantity;
+
+    subtotalElement.textContent =
+        formatPrice(subtotal);
+
+    totalElement.textContent =
+        formatPrice(subtotal);
+
+
+    updateCartCount();
+
+
+    /* IMAGE FALLBACK */
+
+    document
+        .querySelectorAll(".cart-image img")
+        .forEach(function(image){
+
+            image.addEventListener(
+                "error",
+                function(){
+
+                    this.src =
+                    "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80";
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   CHANGE QUANTITY
+========================================================= */
+
+function changeQuantity(index,change){
+
+    if(!cart[index]){
+        return;
+    }
+
+
+    let newQuantity =
+        Number(cart[index].quantity)
+        + change;
+
+
+    if(newQuantity < 1){
+
+        newQuantity = 1;
+
+    }
+
+
+    cart[index].quantity =
+        newQuantity;
+
+
+    saveCart();
+
+    displayCart();
+
+}
+
+
+/* =========================================================
+   REMOVE ITEM
+========================================================= */
+
+function removeItem(index){
+
+    if(!cart[index]){
+        return;
+    }
+
+
+    cart.splice(
+        index,
+        1
+    );
+
+
+    saveCart();
+
+    displayCart();
+
+}
+
+
+/* =========================================================
+   CLEAR CART
+========================================================= */
+
+function clearCart(){
+
+    if(cart.length === 0){
+        return;
+    }
+
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to clear your cart?"
+        );
+
+
+    if(confirmed){
+
+        cart = [];
+
+        saveCart();
+
+        displayCart();
+
+    }
+
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        alert(
+            "Your cart is empty. Please add some farm products first."
+        );
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    cart.forEach(function(item){
+
+        total +=
+            Number(item.price || 0) *
+            Number(item.quantity || 1);
+
+    });
+
+
+    alert(
+
+        "Thank you for choosing Rahul Organic Farm! 🌱\n\n" +
+
+        "Your order total is " +
+        formatPrice(total) +
+        ".\n\n" +
+
+        "Please contact us at +91 91779 19291 " +
+        "to confirm your order and delivery details."
+
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+displayCart();
+
+updateCartCount();
+
+
+</script>
+
+
+</body>
+
+</html>
